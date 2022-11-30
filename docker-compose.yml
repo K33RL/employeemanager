@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: employee-service
+    image: postgres:13.3
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: employee_db
+
+
