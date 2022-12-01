@@ -2,20 +2,16 @@ package tech.myproject.employeemanager.service;
 
 import java.util.List;
 import java.util.UUID;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tech.myproject.employeemanager.exception.EmployeeNotFoundException;
 import tech.myproject.employeemanager.model.Employee;
 import tech.myproject.employeemanager.repository.EmployeeRepository;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
-
-    @Autowired
-    public EmployeeService(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
 
     public Employee addEmployee(Employee employee) {
         employee.setEmployeeCode(UUID.randomUUID().toString());
